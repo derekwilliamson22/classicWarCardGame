@@ -1,0 +1,1 @@
+Game logic for the classic card game "War" built in Javascript over the weekend.
