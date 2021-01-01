@@ -716,12 +716,14 @@ function singleHandTest(a, b){
                 console.log("this is the war flop 1 value:", warFlop1Value);
                 console.log("this is the war flop 2 value:", warFlop2Value);
                 if(warFlop1Value > warFlop2Value){
+                    console.log("Player 1 wins the WarHand");
                     warHand.push(warFlop1);
                     warHand.push(warFlop2);
                     a = a.concat(warHand.flat());
                     warHand = [];
                 }
                 else if(warFlop1Value < warFlop2Value){
+                    console.log("Player 2 wins the WarHand");
                     warHand.push(warFlop1);
                     warHand.push(warFlop2);
                     b = b.concat(warHand.flat());
@@ -750,12 +752,14 @@ function singleHandTest(a, b){
                     console.log("this is the war flop 1 value:", warFlop1Value);
                     console.log("this is the war flop 2 value:", warFlop2Value);
                     if(warFlop1Value > warFlop2Value){
+                        console.log("Player 1 wins the WarHand");
                         warHand.push(warFlop1);
                         warHand.push(warFlop2);
                         a = a.concat(warHand.flat());
                         warHand = [];
                     }
                     else if(warFlop1Value < warFlop2Value){
+                        console.log("Player 2 wins the WarHand");
                         warHand.push(warFlop1);
                         warHand.push(warFlop2);
                         b = b.concat(warHand.flat());
