@@ -635,7 +635,12 @@ const testCards2 =
     }
 
 ]
+
 function gameOfWar(playerOne, playerTwo){ // where playerOne and playerTwo are both arrays dervied from a standard deck of cards (52), aces are high
+    let playerOneName = playerOne;
+    let playerTwoName = playerTwo;
+    console.log("this is", playerOneName);
+    console.log("this is", playerTwoName);
     dealTheCards(acesHighDeck);
     singleHandTest(playerOneCards, playerTwoCards);
     //singleHandTest(testCards1, testCards2);
@@ -650,8 +655,6 @@ function gameOfWar(playerOne, playerTwo){ // where playerOne and playerTwo are b
 let array1 = [4,3,2,1,5,4,5,4,4,6];
 let array2 = [4,5,4,4,6,4,3,2,1,5];
 function singleHandTest(a, b){
-    console.log("this is player 1", a);
-    console.log("this is player 2", b);
     let warHand = [];
     let warFlop1;
     let warFlop2;
@@ -766,6 +769,9 @@ function singleHandTest(a, b){
            
             
             count ++
+            if(count > 2000){
+                return "This game has reached its limit."
+            } 
             console.log("Round:",count);
             console.log("Total Cards:", a.length + b.length);
             console.log("this is player 1", a);
