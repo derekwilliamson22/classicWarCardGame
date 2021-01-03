@@ -528,6 +528,7 @@ const acesLowDeck =
     },
 ]
 
+// In the future I may use the random number generator to create multiple shuffles
 function getRandomInt(min, max) { 
     
     min = Math.ceil(min)
@@ -556,11 +557,9 @@ function shuffleDeck(array) {
     return array;
   }
  
-
+// the following cuts the deck of cards in two after shuffling them and assigns them to the two players
 let playerOneCards;
 let playerTwoCards;
-let playerOneName;
-let playerTwoName;
 function dealTheCards(array){
     shuffleDeck(array);
     const halfTheDeck = Math.ceil(array.length/2);
@@ -569,6 +568,7 @@ function dealTheCards(array){
     return playerOneCards, playerTwoCards; 
 }
 
+// two arrays to test the "war" portion of the game logic
 const testCards1 = 
 [
     {
@@ -638,16 +638,17 @@ const testCards2 =
 
 ]
 
+// the game of "war". the function starts the game 
 function gameOfWar(playerOne, playerTwo){ // where playerOne and playerTwo are both arrays dervied from a standard deck of cards (52), aces are high
     let playerOneName = playerOne;
     let playerTwoName = playerTwo;
-    console.log("this is", playerOneName);
-    console.log("this is", playerTwoName);
-    dealTheCards(acesHighDeck);
-    singleHandTest(playerOneCards, playerTwoCards);
-    //singleHandTest(testCards1, testCards2);
     if(playerOne && playerTwo !== undefined){
         console.log("Play the game!");
+        console.log("this is", playerOneName);
+        console.log("this is", playerTwoName);
+        dealTheCards(acesHighDeck);
+        singleHandTest(playerOneCards, playerTwoCards);
+        //singleHandTest(testCards1, testCards2);
     }
     else {
         console.log("Please enter two names to play.");
