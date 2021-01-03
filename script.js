@@ -559,6 +559,8 @@ function shuffleDeck(array) {
 
 let playerOneCards;
 let playerTwoCards;
+let playerOneName;
+let playerTwoName;
 function dealTheCards(array){
     shuffleDeck(array);
     const halfTheDeck = Math.ceil(array.length/2);
@@ -655,6 +657,8 @@ function gameOfWar(playerOne, playerTwo){ // where playerOne and playerTwo are b
 let array1 = [4,3,2,1,5,4,5,4,4,6];
 let array2 = [4,5,4,4,6,4,3,2,1,5];
 function singleHandTest(a, b){
+    let playerOneName;
+    let playerTwoName;
     let warHand = [];
     let warFlop1;
     let warFlop2;
@@ -666,12 +670,14 @@ function singleHandTest(a, b){
         while(a.length || b.length > 0){
 
             if(a.length === 0){
-                console.log("player 2 wins");
-                break;
+                //console.log("player 2 wins");
+                //break;
+                return playerTwoName;
             }
             if(b.length === 0){
-                console.log("player 1 wins");
-                break;
+                //console.log("player 1 wins");
+                //break;
+                return playerOneName;
             }
             let firstElement = a.shift();
             let secondElement = b.shift();
@@ -700,12 +706,14 @@ function singleHandTest(a, b){
                 warHand.push(b.splice(0,3));
                 console.log("this is the war hand result:", warHand);
                 if(a.length === 0){
-                    console.log("player 2 wins");
-                    return;
+                    //console.log("player 2 wins");
+                    //return;
+                    return playerTwoName;
                 }
                 if(b.length === 0){
-                    console.log("player 1 wins");
-                    return;
+                    //console.log("player 1 wins");
+                    //return;
+                    return playerOneName;
                 }
                 warFlop1 = a.shift();
                 warFlop2 = b.shift();
@@ -736,12 +744,14 @@ function singleHandTest(a, b){
                     warHand.push(b.splice(0,3));
                     console.log("this is the war hand result:", warHand);
                     if(a.length === 0){
-                        console.log("player 2 wins");
-                        return;
+                        // console.log("player 2 wins");
+                        // return;
+                        return playerTwoName;
                     }
                     if(b.length === 0){
-                        console.log("player 1 wins");
-                        return;
+                        // console.log("player 1 wins");
+                        // return;
+                        return playerOneName;
                     }
                     warFlop1 = a.shift();
                     warFlop2 = b.shift();
@@ -774,7 +784,7 @@ function singleHandTest(a, b){
             
             count ++
             if(count > 2000){
-                return "This game has reached its limit."
+                return console.log("This game has reached its limit.");
             } 
             console.log("Round:",count);
             console.log("Total Cards:", a.length + b.length);
