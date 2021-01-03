@@ -652,7 +652,7 @@ function gameOfWar(playerOne, playerTwo){
         let warFlop2;
         let warFlop1Value;
         let warFlop2Value;
-        let count = 0;
+        let count = 1;
         if(a.length === b.length){
             while(a.length || b.length > 0){
                 console.log("Round:",count);
@@ -687,7 +687,7 @@ function gameOfWar(playerOne, playerTwo){
                 }
 
                 if(topCardOneValue === topCardTwoValue){
-                    console.log("the cards are equal");
+                    console.log("The cards are equal, let's battle!");
                     warHand.push(firstElement);
                     warHand.push(secondElement);
                     warHand.push(a.splice(0,3));
@@ -706,8 +706,8 @@ function gameOfWar(playerOne, playerTwo){
                     warFlop2 = b.shift();
                     warFlop1Value = warFlop1.value 
                     warFlop2Value = warFlop2.value 
-                    console.log("this is the war flop 1:", warFlop1);
-                    console.log("this is the war flop 2:", warFlop2);
+                    console.log("This is the War flop 1:", warFlop1);
+                    console.log("This is the War flop 2:", warFlop2);
                     if(warFlop1Value > warFlop2Value){
                         console.log("Player 1 wins the WarHand");
                         warHand.push(warFlop1);
@@ -741,8 +741,8 @@ function gameOfWar(playerOne, playerTwo){
                         warFlop2 = b.shift();
                         warFlop1Value = warFlop1.value 
                         warFlop2Value = warFlop2.value 
-                        console.log("this is the war flop 1:", warFlop1);
-                        console.log("this is the war flop 2:", warFlop2);
+                        console.log("This is the War flop 1:", warFlop1);
+                        console.log("This is the War flop 2:", warFlop2);
                         if(warFlop1Value > warFlop2Value){
                             console.log("Player 1 wins the second WarHand");
                             warHand.push(warFlop1);
