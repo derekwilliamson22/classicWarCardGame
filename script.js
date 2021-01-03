@@ -644,9 +644,6 @@ function gameOfWar(playerOne, playerTwo){
     let deck = acesHighDeck;
     let a, b;
     if(playerOne && playerTwo !== undefined){
-        console.log("Play the game!");
-        console.log("this is", playerOneName);
-        console.log("this is", playerTwoName);
         dealTheCards(deck);
         a = playerOneCards;
         b = playerTwoCards
@@ -657,9 +654,11 @@ function gameOfWar(playerOne, playerTwo){
         let warFlop2Value;
         let count = 0;
         if(a.length === b.length){
-            console.log("both sides have the same number of cards");
             while(a.length || b.length > 0){
-
+                console.log("Round:",count);
+                console.log("Total Cards:", a.length + b.length);
+                console.log(`${playerOneName}'s cards`, a);
+                console.log(`${playerTwoName}'s cards`, b);
                 if(a.length === 0){
                     //console.log("player 2 wins");
                     //break;
@@ -676,8 +675,6 @@ function gameOfWar(playerOne, playerTwo){
                 let topCardTwoValue = secondElement.value;
                 console.log("Player 1 plays:", firstElement);
                 console.log("Player 2 plays:", secondElement);
-                console.log("topCardOneValue:", topCardOneValue);
-                console.log("topCardTwoValue:", topCardTwoValue);
                 if(topCardOneValue > topCardTwoValue){
                     console.log("Player 1's card is higher");
                     a.push(firstElement);
@@ -695,7 +692,6 @@ function gameOfWar(playerOne, playerTwo){
                     warHand.push(secondElement);
                     warHand.push(a.splice(0,3));
                     warHand.push(b.splice(0,3));
-                    console.log("this is the war hand result:", warHand);
                     if(a.length === 0){
                         //console.log("player 2 wins");
                         //return;
@@ -712,8 +708,6 @@ function gameOfWar(playerOne, playerTwo){
                     warFlop2Value = warFlop2.value 
                     console.log("this is the war flop 1:", warFlop1);
                     console.log("this is the war flop 2:", warFlop2);
-                    console.log("this is the war flop 1 value:", warFlop1Value);
-                    console.log("this is the war flop 2 value:", warFlop2Value);
                     if(warFlop1Value > warFlop2Value){
                         console.log("Player 1 wins the WarHand");
                         warHand.push(warFlop1);
@@ -733,7 +727,6 @@ function gameOfWar(playerOne, playerTwo){
                         warHand.push(secondElement);
                         warHand.push(a.splice(0,3));
                         warHand.push(b.splice(0,3));
-                        console.log("this is the war hand result:", warHand);
                         if(a.length === 0){
                             // console.log("player 2 wins");
                             // return;
@@ -750,26 +743,21 @@ function gameOfWar(playerOne, playerTwo){
                         warFlop2Value = warFlop2.value 
                         console.log("this is the war flop 1:", warFlop1);
                         console.log("this is the war flop 2:", warFlop2);
-                        console.log("this is the war flop 1 value:", warFlop1Value);
-                        console.log("this is the war flop 2 value:", warFlop2Value);
                         if(warFlop1Value > warFlop2Value){
-                            console.log("Player 1 wins the WarHand");
+                            console.log("Player 1 wins the second WarHand");
                             warHand.push(warFlop1);
                             warHand.push(warFlop2);
                             a = a.concat(warHand.flat());
                             warHand = [];
                         }
                         else if(warFlop1Value < warFlop2Value){
-                            console.log("Player 2 wins the WarHand");
+                            console.log("Player 2 wins the second WarHand");
                             warHand.push(warFlop1);
                             warHand.push(warFlop2);
                             b = b.concat(warHand.flat());
                             warHand = [];
                         }
                     }  
-                    console.log("this is the war hand result:", warHand);
-                    console.log("this is the new a:", a);
-                    console.log("this is the new b:", b);
                 }
             
                 
@@ -777,10 +765,6 @@ function gameOfWar(playerOne, playerTwo){
                 if(count > 2000){
                     return console.log("This game has reached its limit.");
                 } 
-                console.log("Round:",count);
-                console.log("Total Cards:", a.length + b.length);
-                console.log("this is player 1", a);
-                console.log("this is player 2", b);
             }
         }
         else {
