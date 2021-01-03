@@ -7,3 +7,5 @@ I wanted to challenge myself by brushing up on my Javascript skills by trying to
 I definitely searched for answers to my questions and used online documentation, mostly from MDN, to remind myself of certain methods.
 
 It is far from perfect, but I'm proud I made it this far!
+
+Enjoy!
