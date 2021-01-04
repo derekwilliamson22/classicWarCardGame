@@ -682,8 +682,8 @@ function gameOfWar(playerOne, playerTwo){
                 }
                 else if(topCardOneValue < topCardTwoValue){
                     console.log("Player 2's card is higher");
-                    b.push(firstElement);
                     b.push(secondElement);
+                    b.push(firstElement);
                 }
 
                 if(topCardOneValue === topCardTwoValue){
