@@ -537,8 +537,7 @@ function getRandomInt(min, max) {
 }
  
 // the following cuts the deck of cards in two after shuffling them and assigns them to the two players
-let playerOneCards;
-let playerTwoCards;
+let playerOneCards, playerTwoCards;
 function dealTheCards(array){
     shuffleDeck(array);
     const halfTheDeck = Math.ceil(array.length/2);
@@ -552,7 +551,7 @@ function shuffleDeck(array) {
     let currentIndex = array.length, temporaryValue, randomIndex;
   
     // While there remain elements to shuffle...
-    while (0 !== currentIndex) {
+    while (currentIndex !== 0) {
   
       // Pick a remaining element...
       randomIndex = Math.floor(Math.random() * currentIndex);
@@ -639,9 +638,15 @@ const testCards2 =
 
 // the game of "war". the function starts the game when two names as strings are input as parameters
 function gameOfWar(playerOne, playerTwo){ 
-    let playerOneName = playerOne;
-    let playerTwoName = playerTwo;
-    let deck = acesHighDeck;
+    const playerOneName = playerOne;
+    const playerTwoName = playerTwo;
+
+    // toying with the idea of ebing able to replay the game without refreshing the browser
+    // and not manipulating the original array of cards, but copying them 
+    let deck = JSON.parse(JSON.stringify(acesHighDeck)); 
+    
+    // original way of doing it. acesHighDeck is emptied as a result
+    //let deck = acesHighDeck
     let a, b;
     if(playerOne && playerTwo !== undefined){
         dealTheCards(deck);
@@ -768,7 +773,7 @@ function gameOfWar(playerOne, playerTwo){
             }
         }
         else {
-            return "Please reshuffle and start a new game."
+            return console.log("Please reshuffle and start a new game.");
         }
             //singleHandTest(playerOneCards, playerTwoCards);
             //singleHandTest(testCards1, testCards2);
