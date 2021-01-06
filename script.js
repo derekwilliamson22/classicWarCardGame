@@ -637,12 +637,13 @@ const testCards2 =
 ]
 
 // the game of "war". the function starts the game when two names as strings are input as parameters
-function gameOfWar(playerOne, playerTwo){ 
+function gameOfWar(playerOne, playerTwo){
     const playerOneName = playerOne;
     const playerTwoName = playerTwo;
 
-    // toying with the idea of ebing able to replay the game without refreshing the browser
+    // toying with the idea of being able to replay the game without refreshing the browser
     // and not manipulating the original array of cards, but copying them 
+    // code example from here: https://www.freecodecamp.org/news/how-to-clone-an-array-in-javascript-1d3183468f6a/
     let deck = JSON.parse(JSON.stringify(acesHighDeck)); 
     
     // original way of doing it. acesHighDeck is emptied as a result
@@ -653,10 +654,8 @@ function gameOfWar(playerOne, playerTwo){
         a = playerOneCards;
         b = playerTwoCards
         let warHand = [];
-        let warFlop1;
-        let warFlop2;
-        let warFlop1Value;
-        let warFlop2Value;
+        let warFlop1, warFlop2;
+        let warFlop1Value, warFlop2Value;
         let count = 1;
         if(a.length === b.length){
             while(a.length || b.length > 0){
@@ -695,6 +694,8 @@ function gameOfWar(playerOne, playerTwo){
                     console.log("The cards are equal, let's battle!");
                     warHand.push(firstElement);
                     warHand.push(secondElement);
+                    // could add a ternary here for array.length to dtermine how big the war flop will be
+                    
                     warHand.push(a.splice(0,3));
                     warHand.push(b.splice(0,3));
                     if(a.length === 0){
