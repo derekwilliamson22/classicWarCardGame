@@ -1,3 +1,5 @@
+
+
 function dealTheCards(array){
     shuffleDeck(array);
     const halfTheDeck = Math.ceil(array.length/2);
@@ -12,6 +14,8 @@ function getRandomInt(min, max) {
     max = Math.floor(max)
     return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
 }
+
+
 
 function shuffleDeck(array) {
     let currentIndex = array.length, temporaryValue, randomIndex;
