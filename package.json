@@ -1,0 +1,26 @@
+{
+  "name": "classicWarCardGame",
+  "version": "1.0.0",
+  "description": "Game logic for the classic card game \"War\" built in Javascript over the weekend.",
+  "main": "script.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/derekwilliamson22/classicWarCardGame.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/derekwilliamson22/classicWarCardGame/issues"
+  },
+  "homepage": "https://github.com/derekwilliamson22/classicWarCardGame#readme",
+  "devDependencies": {
+    "jest": "^26.6.3"
+  }
+}
